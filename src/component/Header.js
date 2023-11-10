@@ -1,4 +1,3 @@
-// Header.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Assuming you are using react-router-dom
 
@@ -12,13 +11,12 @@ export const Header = () => {
       
       <h1>Cougar Deals</h1>
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          
+        <ul>          
           <li>
             <Link to="/WishList">Wish List</Link>
+          </li>
+          <li>
+            <Link to="/Register">Register</Link>
           </li>
         </ul>
       </nav>
