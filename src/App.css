@@ -1,0 +1,131 @@
+/* App.css */
+.App {
+  text-align: center;
+  padding-bottom: 60px; /* Increase padding bottom to accommodate the footer */
+  position: relative; /* Ensure the footer is positioned relative to the App container */
+  min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+}
+
+.App-header {
+  background-color: #9c9a9a;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f9f9f9;
+}
+
+/* Footer CSS */
+.footer {
+  background-color: #9c9a9a;
+  position: absolute; /* Adjust position to absolute */
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Adjust height of the footer */
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+}
+
+/* New Styles for Search Bar and Product Display */
+.product-slot {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-slot img {
+
+  flex: 0 0 calc(50% - 40px); 
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.search-bar {
+  margin: 10px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #555;
+  margin: 10px 0;
+}
+li {
+  list-style-type: none;
+}

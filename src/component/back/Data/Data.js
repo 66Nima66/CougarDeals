@@ -1,0 +1,86 @@
+
+
+const mockData = [
+    {
+        id: 1,
+        name: 'Apple iPhone 15 pro', 
+        description: 'Iphone 15 pro with a titanium body that you must have.',
+        manuFactorPrice: 999.99,
+        ourPrice: 899.99,
+        image: 'cougardeals/public/images/iphone15.jpeg',
+    },
+    {
+        id: 2,
+        name: 'Google Pixel 8', 
+        description: 'Description for product 2.',
+        manuFactorPrice: 899.99,
+        ourPrice: 799.99,
+        image: 'cougardeals/public/images/iphone15.jpeg',
+    },
+    {
+        id: 3,
+        name: 'Samsung Galaxy S23', 
+        description: 'Description for product 3.',
+        manuFactorPrice: 799.99,
+        ourPrice: 699.99,
+        image: 'cougardeals/public/images/iphone15.jpeg',
+    },
+    {
+        id: 4,
+        name: 'Samsung Galaxy Z Fold', 
+        description: 'Description for product 4.',
+        manuFactorPrice: 699.99,
+        ourPrice: 599.99,
+        image: '/path/to/image4.jpeg',
+    },
+    {
+        id: 5,
+        name: 'Samsung Galaxy Z Flip', 
+        description: 'Description for product 5.',
+        manuFactorPrice: 599.99,
+        ourPrice: 499.99,
+        image: '/path/to/image5.jpeg',
+    },
+    {
+        id: 6,
+        name: 'Product 6', 
+        description: 'Description for product 6.',
+        manuFactorPrice: 499.99,
+        ourPrice: 399.99,
+        image: '/path/to/image6.jpeg',
+    },
+    {
+        id: 7,
+        name: 'Product 7', 
+        description: 'Description for product 7.',
+        manuFactorPrice: 399.99,
+        ourPrice: 299.99,
+        image: '/path/to/image7.jpeg',
+    },
+    {
+        id: 8,
+        name: 'Product 8', 
+        description: 'Description for product 8.',
+        manuFactorPrice: 299.99,
+        ourPrice: 199.99,
+        image: '/path/to/image8.jpeg',
+    },
+    {
+        id: 9,
+        name: 'Product 9', 
+        description: 'Description for product 9.',
+        manuFactorPrice: 199.99,
+        ourPrice: 99.99,
+        image: '/path/to/image9.jpeg',
+    },
+    {
+        id: 10,
+        name: 'Product 10', 
+        description: 'Description for product 10.',
+        manuFactorPrice: 99.99,
+        ourPrice: 49.99,
+        image: '/path/to/image10.jpeg',
+    },
+];
+
+export default mockData;
