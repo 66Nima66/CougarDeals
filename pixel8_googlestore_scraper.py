@@ -1,6 +1,8 @@
 import re
 import time
 import traceback
+import os
+import sys
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -56,12 +58,12 @@ def find_lowest_price(driver, url_list):
     source = [k for k, v in prices.items() if v == lowest_price][0]
     return lowest_price, source
 
+
 def main():
     try:
         # Dictionary of retailers and their URLs
         url_list = {
             'Google Store': 'https://store.google.com/product/pixel_8?hl=en-US',
-            
         }
 
         lowest_price, source = find_lowest_price(driver, url_list)
@@ -75,16 +77,24 @@ def main():
             'timestamp': firestore.SERVER_TIMESTAMP
         }
 
-        # Add a new document to the smartphones collection
-        db.collection('smartphones').add(data)
-        print("Data uploaded to Firestore.")
+        # Generate a document ID based on the model and timestamp
+        document_id = f"{data['model']}_{int(time.time())}"
+
+        # Add a new document to the smartphones collection with the specified document ID
+        db.collection('smartphones').document(document_id).set(data)
+        print(f"Data uploaded to Firestore with document ID: {document_id}. Price: {lowest_price}")
 
     except Exception as e:
-        print(f"An error occurred: {e}")
-    
+        # Print the full exception traceback to get more details on the error
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        print(f"An error occurred in {fname} at line {exc_tb.tb_lineno}: {e}")
+        traceback.print_exc()
+
     finally:
         # Close the browser
         driver.quit()
 
 if __name__ == '__main__':
     main()
+
