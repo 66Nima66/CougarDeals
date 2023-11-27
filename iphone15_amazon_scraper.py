@@ -1,4 +1,5 @@
 import re
+import time  
 import firebase_admin
 from firebase_admin import credentials, firestore
 from selenium import webdriver
@@ -8,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-# REPLACE WITH YOUR JSON FILE \/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\
+# REPLACE WITH YOUR JSON FILE
 cred = credentials.Certificate('/Users/michaelcassidy/Downloads/cougar-phone-deals-firebase-adminsdk-56e88-2edf050505.json')  
 firebase_admin.initialize_app(cred)
 
@@ -42,6 +43,9 @@ try:
     # Print price to terminal for verification
     print(f"Price on Amazon: {full_price}")
 
+    # Generate a document ID based on your logic, for example, a combination of model and timestamp
+    document_id = f"iPhone15_{int(time.time())}"
+
     # Firestore upload data
     data = {
         'model': 'iPhone 15', 
@@ -50,9 +54,9 @@ try:
         'timestamp': firestore.SERVER_TIMESTAMP  # Adds a server-side timestamp
     }
 
-    # Add a new document to the smartphones collection
-    db.collection('smartphones').add(data)
-    print(f"Data uploaded to Firestore. Price: {full_price}")
+    # Add a new document to the smartphones collection with the specified document ID
+    db.collection('smartphones').document(document_id).set(data)
+    print(f"Data uploaded to Firestore with document ID: {document_id}. Price: {full_price}")
 
 except Exception as e:
     print(f"An error occurred: {e}")
