@@ -43,14 +43,14 @@ try:
     # Print price to terminal for verification
     print(f"Price on Amazon: {full_price}")
 
-    # Generate a document ID based on your logic, for example, a combination of model and timestamp
+    # Generate a docID for the phone searched with a timestamp
     document_id = f"iPhone15_{int(time.time())}"
 
     # Firestore upload data
     data = {
         'model': 'iPhone 15', 
         'price': full_price,
-        'source': 'Amazon',
+        'source': 'https://www.amazon.com/iphone-15/s?k=iphone+15',
         'timestamp': firestore.SERVER_TIMESTAMP  # Adds a server-side timestamp
     }
 
